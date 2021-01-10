@@ -17,7 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
     <script>
 
-        var socket = io.connect('http://localhost:5600');
+        // var socket = io.connect('http://localhost:5600');
+        var socket = io.connect('https://agile-plateau-03110.herokuapp.com');
 
         socket.on("fileSystemModified", (data) => {
             document.getElementById("notification").innerHTML = data.message
