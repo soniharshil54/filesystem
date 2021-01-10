@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Socket Example</title>
+</head>
+
+<body>
+    <h1>When someone adds or moves or removes a file/folder it will be shown here.</h1>
+    <div>
+        <h2 id="notification"></h2>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+    <script>
+
+        var socket = io.connect('http://localhost:5600');
+
+        socket.on("fileSystemModified", (data) => {
+            document.getElementById("notification").innerHTML = data.message
+            document.getElementById("notification").style.color = data.color
+        });
+
+    </script>
+</body>
+
+</html>

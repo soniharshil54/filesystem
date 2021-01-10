@@ -1,0 +1,25 @@
+{
+  "name": "filesystem",
+  "version": "1.0.0",
+  "description": "File System Apis",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=development node app.js",
+    "staging": "NODE_ENV=staging node app.js"
+  },
+  "author": "Harshil Soni",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mysql": "^2.18.1",
+    "socket.io": "^3.0.5"
+  }
+}
