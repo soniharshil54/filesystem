@@ -1,8 +1,8 @@
 module.exports = {
-    host     : 'localhost',
-    user     : 'soniuser',
-    password : 'soni3360',
-    database : 'testdb',
+    host     : 'sql12.freemysqlhosting.net',
+    user     : 'sql12385930',
+    password : 'AYiRBQrleq',
+    database : 'sql12385930',
     db_port: 3306,
     server_port: 5600
 }
