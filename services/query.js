@@ -80,7 +80,8 @@ module.exports = {
                 if (err) {
                     reject(err)
                 }
-                resolve(result.length)
+                let count = result && result.length ? result.length : 0
+                resolve(count)
             });
         })
     },
