@@ -17,7 +17,7 @@ var routes = require('./routes')(app)
 global.io = io; //added
 require('./configs/socket')(io)
 
-const port = config.server_port;
+const port = process.env.PORT || config.server_port;
 
 app.get('/', function (req, res) {
     res.sendfile('./test/socket-test/index.html');
