@@ -18,7 +18,7 @@ Below are the steps to setup developer environment.
 
 6. Check if the `filesystem` database and the tables `user` and `filesystem` are created.
 
-7. Change the database credentials in `configs/env/development.js`.
+7. Change the database credentials in `configs/env/development.js`. (Dont change the port of server [5600] or if you change do the same in test/socket-test/index.html fro socket connection.)
 
 8. Now the setup is good to go.
 
