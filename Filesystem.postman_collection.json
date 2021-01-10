@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "d9f4e03e-9902-4c9f-ac0f-58117a4af375",
+		"name": "Filesystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"bing@filesystem.com\",\n    \"password\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_local}}/user/login",
+					"host": [
+						"{{api_local}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Joey Tribbiany\",\n    \"email\": \"joey@filesystem.com\",\n    \"password\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_local}}/user/register",
+					"host": [
+						"{{api_local}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View in fIle/folder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filter\": {\n        \"name\":\"root\"\n    },\n    \"sort\": {\n        \"path\": \"ASC\"\n    },\n    \"search\": \"f\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_local}}/user/file-system/view",
+					"host": [
+						"{{api_local}}"
+					],
+					"path": [
+						"user",
+						"file-system",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add folder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"New Folder\",\n    \"type\": 2,\n    \"parentName\": \"folder 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_local}}/user/file-system/add",
+					"host": [
+						"{{api_local}}"
+					],
+					"path": [
+						"user",
+						"file-system",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkpvaG4gZG9lIiwiZW1haWwiOiJqb2huZG9lQGZpbGVzeXN0ZW0uY29tIiwiaWF0IjoxNjEwMjU4MTY2LCJleHAiOjE2MTA2OTAxNjZ9.O0MVNpsmKgmMM1y7BAm2w774krd9-OPhOv-dQ79D_Ss"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"new file j\",\n    \"type\": 1,\n    \"parentName\": \"folder 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_local}}/user/file-system/add",
+					"host": [
+						"{{api_local}}"
+					],
+					"path": [
+						"user",
+						"file-system",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move fIle/folder",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"new file j\",\n    \"moveTo\": \"folder 2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_local}}/user/file-system/move",
+					"host": [
+						"{{api_local}}"
+					],
+					"path": [
+						"user",
+						"file-system",
+						"move"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove fIle/folder",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"new file j\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_local}}/user/file-system/remove",
+					"host": [
+						"{{api_local}}"
+					],
+					"path": [
+						"user",
+						"file-system",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_local",
+			"value": "http://localhost:5600"
+		},
+		{
+			"key": "jwt_token",
+			"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkpvaG4gZG9lIiwiZW1haWwiOiJqb2huZG9lQGZpbGVzeXN0ZW0uY29tIiwiaWF0IjoxNjEwMjc0MjQzLCJleHAiOjE2MTA3MDYyNDN9.jvIhbEstbCEQKcqlKqHsPW3tIAOe6q0kNL3yAwrqubU"
+		},
+		{
+			"key": "api_heroku",
+			"value": "https://agile-plateau-03110.herokuapp.com"
+		}
+	]
+}
