@@ -33,3 +33,8 @@ Below are the steps to setup developer environment.
 13. These apis are hosted on https://agile-plateau-03110.herokuapp.com (Heroku). And apis on the same will work but one specific api that is used to get the directory structure will not run as it isn't supported in the mysql versions below 8.x . 
 
 You're good to go.
+
+# Notes
+
+1. To add file/folder, same api is used. Here type : 1 is to add file and type : 2 is to add folder in req body.
+2. You can't add the file/folder of the same names. its set like this for convenient in using apis as one wont have to use id of folders in req to reference folders and you can use name of the folders directly to add, move.
